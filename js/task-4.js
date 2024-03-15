@@ -1,30 +1,48 @@
-function getShippingCost(country) {
-    let message;
-    switch (country) {
-        case 'China':
-            message = "Shipping to China will cost 100 credits";
-            break;
-        case 'Chile':
-            message = "Shipping to Chile will cost 250 credits";
-            break;
-        case 'Australia':
-            message = "Shipping to Australia will cost 170 credits";
-            break;
-        case 'Jamaica':
-            message = "Shipping to Jamaica will cost 120 credits";
-            break;
-        default:
-            message = "Sorry, there is no delivery to your country";
-            break;
-    }
-    return message;
-}
+const getTotalBalanceByGender = (users, gender) => {
+  return users
+    .filter(user => user.gender === gender)
+    .reduce((totalBalance, user) => totalBalance + user.balance, 0);
+};
 
-// console.log(getShippingCost("Australia"));
-// console.log(getShippingCost("Germany"));
-// console.log(getShippingCost("China"));
-// console.log(getShippingCost("Chile"));
-// console.log(getShippingCost("Jamaica"));
-// console.log(getShippingCost("Sweden"));
+const clients = [
+  {
+    name: "Moore Hensley",
+    gender: "male",
+    balance: 2811
+  },
+  {
+    name: "Sharlene Bush",
+    gender: "female",
+    balance: 3821
+  },
+  {
+    name: "Ross Vazquez",
+    gender: "male",
+    balance: 3793
+  },
+  {
+    name: "Elma Head",
+    gender: "female",
+    balance: 2278
+  },
+  {
+    name: "Carey Barr",
+    gender: "male",
+    balance: 3951
+  },
+  {
+    name: "Blackburn Dotson",
+    gender: "male",
+    balance: 1498
+  },
+  {
+    name: "Sheree Anthony",
+    gender: "female",
+    balance: 2764
+  }
+];
+
+// console.log(getTotalBalanceByGender(clients, "male"));
+// console.log(getTotalBalanceByGender(clients, "female")); 
 
 
